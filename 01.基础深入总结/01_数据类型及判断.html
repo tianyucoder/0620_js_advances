@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>01_数据类型</title>
+</head>
+<body>
+
+<!--
+1. js中数据类型的分类(两大类)
+  一、 基本(值)类型：
+      * Number: 任意数值 1 2
+      * String: 任意文本 'atguigu' "atguigu"
+      * Boolean: true / false
+      * undefined: undefined
+      * null: null
+    
+  二、对象(引用)类型：
+      * Object: 任意对象（一般对象） {}
+      * Array: 一种特别的对象类型(1.可以通过下标取值。2.内部数据有序)
+      * Function: 一种特别的对象类型(可执行)
+      备注：Object、Array、Function，其实不是并列关系。
+      
+      
+2. 数据类型的判断：
+    1.使用typeof判断：
+        * 可以区别: 数值、字符串、布尔值、undefined、function
+        * 不能区别: null与对象、null与数组、数组与对象，因为返回的都是object
+        * 对于typeof：
+            * 一个不正确（对于null）：typeof null的结果是 object
+            * 一个不精确（对于数组）：typeof []的结果是 object
+            * 一个没问题（对于一般对象）：typeof {} 的返回值是 object
+            * 以上三种类型两两组合都不能用typeof进行区分
+            * 备注：typeof的返回值是该类型的字符串名称，且首字母小写。
+    
+  2.使用instanceof判断：
+    * 专门用来判断【对象类型】的具体类型，如：Object, Array, Function
+    * A instanceof B ==> 判断A是否是B的实例对象（即：B是构造函数名）
+    
+  3.使用 === 判断
+    * 可以判断: undefined和null
+    * 备注：因为undefined类型只有一个值、null类型也只有一个值，所以可以用===判断
+-->
+
+<script type="text/javascript">
+  
+  /*var a
+  console.log(a) // undefined ---- 灰色的，数据类型undefined
+  console.log(typeof a) // undefined ---- 黑色的，字符串
+  console.log('abc')
+  console.log(typeof a === undefined) //false
+  console.log(typeof a == undefined) //false
+  console.log(typeof a === 'undefined') //true
+  console.log(typeof a == 'undefined') //true
+  
+  var b = 1
+  console.log(typeof b)
+  console.log(typeof b === 'number')
+  
+  var c = 'atguigu'
+  console.log(typeof c)
+  console.log(typeof c === 'String')
+  
+  var d = true
+  console.log(typeof d)
+  console.log(typeof d === 'boolean')
+  
+  var e = function () {
+    
+  }
+  console.log(typeof e)
+  console.log(typeof e === 'function')
+  
+  //typeof null的返回值是'object' 是js底层设计的“缺陷”造成的。
+  var f = null
+  console.log(typeof f)
+  console.log(typeof f === 'null')*/
+  
+  /*var a1 = {name:'kobe',age:40}
+  var a2 = function () {
+    console.log(1)
+  }
+  var a3 = [2,4,6,8]
+  
+  console.log(a1 instanceof Object)
+  console.log(a2 instanceof Function)
+  console.log(a3 instanceof Array)*/
+  
+  var b1 = {
+    b2:[1,'atguigu',console.log],
+    b3:function () {
+      console.log('我是b3')
+    }
+  }
+  
+  //  console.log(b1 instanceof Object)
+  //  console.log(b1.b2 instanceof Array)
+  //  console.log(b1.b3 instanceof Function)
+  
+  console.log(typeof b1.b2[2]);//function
+  console.log(typeof b1.b2[2]('hello'));//2个输出：'hello' 'undefined'
+  console.log(b1.b2[2]('hello'));//2个输出： 'hello' undefined
+  console.log(b1.b3())//2个输出：'我是b3' , undefined
+  
+  var a = null
+  var p = undefined
+  console.log( a === null)
+  console.log( p === undefined)
+
+</script>
+</body>
+</html>

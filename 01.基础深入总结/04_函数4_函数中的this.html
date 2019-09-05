@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>04_函数4_函数中的this</title>
+</head>
+<body>
+<!--
+1. this是什么?
+  * 一个关键字, 一个内置的引用变量
+  * 在函数中可以直接使用this(更多使用在函数中)
+  * this代表调用函数的当前对象
+  * 在定义函数时(不包括箭头函数), this还没有确定, 只有在执行时才动态确定(绑定)的。(不考虑箭头函数)
+  
+2. 如何确定this的值? 重点
+  * test() // this是window
+  * obj.test() //this是obj
+  * new test() //this是该构造函数的实例对象
+  * test.call/apply(obj) //this是编码人员强制指定的
+  总结: 函数的调用方式决定了this是谁
+-->
+
+<script type="text/javascript">
+  
+</script>
+</body>
+</html>
