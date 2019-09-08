@@ -9,27 +9,46 @@
 <script type="text/javascript">
   
   //面试题
-  var obj1 = {m:1,n:2}
+  /*var obj1 = {m:1,n:2}
   var obj2 = {m:3,n:4}
   var obj3 = {}
   
   var a = {}
   
   //问题一：如下代码输出结果
-  /* a.obj1 = 1
+  /!*a.obj1 = 1
   a.obj2 = 2
   a.obj3 = 3
-  console.log(a)*/
+  console.log(a) //{obj1:1,obj2:2,obj3:3}*!/
   
   //问题二：如下代码输出结果
-  /*a[obj1] = 1
-  a[obj2] = 2
-  a[obj3] = 3
-  console.log(a[obj1] === a[obj2])
-  console.log(a[obj1])
-  console.log(a[obj2])*/
+  a[obj1] = 1  // 等价于：a['[object Object]'] = 1
+  a[obj2] = 2 // 等价于：a['[object Object]'] = 2
+  a[obj3] = 3 //等价于：a['[object Object]'] = 3
+  console.log(a)
+  console.log(a[obj1].m)
+  console.log(a[obj1].m+1 === a[obj2].m-1)*/
+  
+  //面试题(变种)
+  var arr1 = [1,3,5]
+  var arr2 = [2,4,6]
+  var arr3 = [8,9,10]
+  
+  var obj = {}
+  /*obj[arr1] = 1
+  obj[arr2] = 2
+  obj[arr3] = 3
+  console.log(obj)*/
+  obj.arr1 = 123
+  obj['arr1'] = 456
+  obj[arr1] = 789
+  console.log(obj) //456 789
   
   
+  
+  
+  
+
 </script>
 </body>
 </html>

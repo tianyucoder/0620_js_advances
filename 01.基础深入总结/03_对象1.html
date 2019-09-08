@@ -33,6 +33,21 @@
 -->
 <script type="text/javascript">
   
+  var person = {
+    name:'kobe',
+    age:40,
+    sex:'男',
+    speak:function () {
+      console.log('我是kobe')
+    }
+  }
+  
+  console.log(person.name)
+  console.log(person['name'])
+  person.speak()
+  person['speak']()
+  
+
 
 </script>
 </body>
