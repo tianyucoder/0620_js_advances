@@ -10,18 +10,51 @@
   * 一个关键字, 一个内置的引用变量
   * 在函数中可以直接使用this(更多使用在函数中)
   * this代表调用函数的当前对象
-  * 在定义函数时(不包括箭头函数), this还没有确定, 只有在执行时才动态确定(绑定)的。(不考虑箭头函数)
+  * 在定义函数时 this还没有确定, 只有在执行时才动态确定(绑定)的。(该句话不考虑箭头函数)
   
-2. 如何确定this的值? 重点
-  * test() // this是window
-  * obj.test() //this是obj
-  * new test() //this是该构造函数的实例对象
-  * test.call/apply(obj) //this是编码人员强制指定的
-  总结: 函数的调用方式决定了this是谁
+2. 如何确定this的值? 重点！！！！
+  * 备注：函数里的this是谁，取决于怎么调用，即：函数的调用方式决定了this是谁
+  * test() :直接调用------this是window
+  * obj.test() :对象调用------this是obj
+  * new test() : 使用new关键字调用----this是该构造函数产生的实例对象
+  * test.call/apply(obj) :call或apply调用------this是编码人员强制指定的
 -->
 
 <script type="text/javascript">
   
+  //直接调用,this是window
+  function demo() {
+    console.log(this)
+  }
+  demo()
+  
+  console.log('@@@@@@@@@@@@')
+  //对象调用
+  var obj = {
+    name:'kobe',
+    age:18,
+    fun:function () {
+      console.log('我是obj对象里的fun方法',this)
+    }
+  }
+  obj.fun()
+  var f = obj.fun
+  f()
+  
+  console.log('##############')
+  
+  //使用new关键字调用
+  function Demo() {
+    console.log('我是Demo',this)
+  }
+  new Demo()
+  
+  //call或apply调用
+  function test() {
+    console.log('我是test',this)
+  }
+  test.call({m:1,n:2})
+ 
 </script>
 </body>
 </html>

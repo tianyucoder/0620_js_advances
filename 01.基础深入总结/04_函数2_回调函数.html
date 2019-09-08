@@ -8,9 +8,9 @@
 <button id="btn">测试点击事件</button>
 <!--
 1. 什么函数才是回调函数?
-  * 你(编码人员)定义的
-  * 你没有直接调用
-  * 但最终它执行了(在特定条件或时刻)
+  * 1.你(编码人员)定义的
+  * 2.你没有直接调用
+  * 3.但最终它执行了(在特定条件或时刻)
 2. 常见的回调函数?
   * DOM事件函数
   * 定时器函数
@@ -18,6 +18,20 @@
   * 生命周期回调函数(后面学)
 -->
 <script type="text/javascript">
+  
+  var btn = document.getElementById('btn')
+  btn.onclick = function () {
+    alert('ok')
+  }
+  
+  setTimeout(function () {
+    alert('nice')
+  },2000)
+  
+  
+  
+  
+  
 
 </script>
 
