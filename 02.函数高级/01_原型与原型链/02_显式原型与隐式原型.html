@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>02_显式原型与隐式原型</title>
+</head>
+<body>
+<!--
+1. 每个函数都有一个prototype属性，即显式原型属性（我们常常简称：显式原型）
+   函数的原型对象上有一个constructor属性，它指向了这个函数本身
+   
+2. 每个实例对象都有一个__proto__属性，即隐式原型属性（我们常常简称：隐式原型）
+
+3. 实例对象的隐式原型属性的值【等于】该实例对应构造函数的显式原型属性的值
+
+4. 内存结构(画图)
+
+5. 总结:
+  * 函数的prototype属性: 在定义函数时自动添加的, 默认值是一个空Object对象
+  * 实例对象的__proto__属性: 创建对象时自动添加的, 默认值为它构造函数的prototype属性值
+  * 程序员能直接操作显式原型, 但不能直接操作隐式原型(ES6之后就可以操作隐式原型了)
+-->
+<script type="text/javascript">
+  
+  function Demo() {
+    
+  }
+  Demo.prototype.test = function () {
+    console.log('我是Demo函数原型对象上的tset')
+  }
+  
+  var d = new Demo()
+  d.test()
+  
+  console.log(Demo.prototype)
+  console.log(d.__proto__)
+  console.log(Demo.prototype === d.__proto__)
+  console.log(Demo.prototype.__proto__)
+  
+  /*
+  * 明确：
+  *    1.程序员更多操作的是显式原型（ES6之前根本不能操作隐式原型）
+  *    2.隐式原型属性是js引擎在执行查找时，内部在用的东西，且程序员是不能操作的（ES6能操作了）
+  * */
+  
+  /*
+  * 1.关于显式原型(prototype)的问题
+  *   (1) 什么时候添加的？ 定义函数/创建函数对象 ===>js创建函数对象后，自动给函数添加了prototype属性。
+  *   (2) 值为多少？ 值是一个Object空对象的地址值 ===> Demo.prototype = {}  Demo.prototype.constructor = Demo。
+  *   (3) 给谁用？ 给函数的实例对象用
+  *r
+  * 2.关于隐式原型(__proto__)的问题
+  *   (1) 什么时候添加的？ 创建实例的时候，js创建实例之后自动给实例添加__proto__属性。
+  *   (2) 值为多少？ 值为其构造函数显式原型属性的值，===> this.__proto__ = Demo.prototype
+  *   (3) 什么时候用？ 当查找实例身上的某个属性的时候用
+  *
+  * */
+  
+  
+</script>
+</body>
+</html>
