@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>01_原型(prototype)</title>
+</head>
+<body>
+<!--
+1. 函数的prototype属性
+  * 每个函数都有一个prototype属性, 它默认指向一个Object类型的空对象(即称为: 原型对象)
+  * 原型对象中有一个属性constructor, 它指向该函数（函数本身）
+2. 给原型对象添加属性(一般都是方法)
+  * 作用: 函数的实例对象可以“找到”其构造函数原型中的属性(方法)
+-->
+<script type="text/javascript">
+  
+  function demo() {
+  
+  }
+  console.log(demo.prototype)
+  console.log(demo.prototype.constructor === demo)
+  demo.prototype.test = function () {
+    console.log('哈哈，我是test')
+  }
+  
+  var d = new demo()
+  
+  
+  //函数原型上的方法，都是给该函数“缔造”出来的实例用的
+  console.log(Date.prototype)
+  var date =  new Date()
+  console.log(date.getFullYear())
+
+
+  //什么是空对象？-----没有任何一个我们所定义的属性的对象，叫做空对象
+  /*var a = {}
+  var b = {m:1}*/
+  
+  //js中如何判断一个对象是否为空对象？
+  /*console.log(JSON.stringify(a) === '{}') //true
+  console.log(JSON.stringify(b))
+  console.log(JSON.stringify(b) === '{}') //false
+  console.log(JSON.stringify(demo.prototype) === '{}')//true*/
+  
+  //给原型对象添加的一般都是方法
+  function Person(name,age) {
+    this.name = name
+    this.age = age
+    /*this.speak = function () {
+      console.log('我说话了')
+    }*/
+  }
+  Person.prototype.speak = function () {
+    console.log('我说话了')
+  }
+  
+  var p1 = new Person('kobe',18)
+  var p2 = new Person('wade',19)
+  p1.speak()
+  
+
+</script>
+</body>
+</html>
