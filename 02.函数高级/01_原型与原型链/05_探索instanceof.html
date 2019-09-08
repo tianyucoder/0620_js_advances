@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>05_探索instanceof</title>
+</head>
+<body>
+<!--
+1. instanceof是如何判断的?
+  * 表达式: A instanceof B
+  * 如果B函数的原型对象在A对象的隐式原型链上, 返回true, 否则返回false
+  * 另外一种说法：A 沿着隐式原型链查找，如果能找到B的原型对象，那么true，否则false
+2. Function是通过new自己产生的实例
+-->
+<script type="text/javascript">
+
+  //案例1
+  function Foo() {}
+  var f1 = new Foo()
+  console.log(f1 instanceof Foo)
+  console.log(f1 instanceof Object)
+
+  //案例2
+  /*console.log(Object instanceof Function)
+  console.log(Object instanceof Object)
+  console.log(Function instanceof Object)
+  console.log(Function instanceof Function)
+  console.log(Object instanceof  Foo)
+  
+  console.log(Object.prototype instanceof Function)*/
+
+</script>
+</body>
+</html>
