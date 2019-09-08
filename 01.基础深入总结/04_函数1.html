@@ -11,6 +11,7 @@
   * 只有函数是可执行的, 其它类型的数据是不可执行的
   * 函数也是对象
   
+  
 2. 为什么要用函数?
   * 提高代码复用
   * 便于阅读和交流
@@ -21,7 +22,7 @@
   
 4. 函数的2种角色（也可以说2种身份）
   * 函数身份: 通过()使用，更关注的是：参数、返回值
-  * 对象身份: 通过.使用  ==> 称之为: 函数对象，更关注的是属性
+  * 对象身份: 通过.使用  ==> 称之为: 函数对象，更关注的是属性或方法
   
 5. 如何调用(执行)函数?
   * test()-------直接调用
@@ -40,6 +41,45 @@
     3. 如果大于60, 输出: 算了吧!
     4. 其它, 输出: 刚好!
   */
+  
+  /*function demo() {
+  
+  }
+  demo.name = 'kobe2'
+  demo.age = 18
+  console.log(demo.name,demo.age)
+  console.log(demo.name)*/
+  
+  //直接调用
+  function test1() {
+    console.log('我是test1')
+  }
+  test1()
+  
+  //new关键字调用
+  function Test2() {
+    console.log('我是Test2')
+    this.m = 1
+  }
+  var t2 = new Test2()
+  console.log(t2)
+  
+  //对象调用
+  var obj = {
+    test3:function () {
+      console.log('我是test3')
+    }
+  }
+  obj.test3()
+  
+  //通过call和apply调用
+  function test4(a,b,c) {
+    console.log(a,b,c,'我是test4',this)
+  }
+  //test4.call({m:1,n:2})
+  //test4.apply({m:1,n:2})
+  test4.call({m:1,n:2},1,2,3)
+  test4.apply({m:1,n:2},[1,2,3])
   
   
 </script>
