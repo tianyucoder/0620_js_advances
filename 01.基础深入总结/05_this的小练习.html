@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<script type="text/javascript">
+  
+  
+  function demo() {
+    console.log('我是demo')
+    this.m = 123
+  }
+  
+  var obj2 = {
+    demo:function () {
+      console.log('我是demo')
+      this.m = 123
+    }
+  }
+  
+  //demo()//直接调用
+  //console.log(m)
+  
+  //var d = new demo()
+  //console.log(d.m)
+  
+  //var obj = {m:1,n:2}
+  //demo.call(obj)
+  //onsole.log(obj.m)
+  
+  //obj2.demo()
+  //console.log(obj2.m)
+  
+  
+  
+</script>
+
+</body>
+</html>
