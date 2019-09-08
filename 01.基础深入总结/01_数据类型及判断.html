@@ -44,12 +44,20 @@
 
 <script type="text/javascript">
   
-  /*var a
+  var a
   console.log(a) // undefined ---- 灰色的，值undefined
   console.log(typeof a) // undefined ---- 黑色的，字符串
   console.log('abc')
   console.log(typeof a === undefined) //false
-  console.log(typeof a == undefined) //false
+  
+  
+  console.log('undefined' == undefined) //false
+  console.log(NaN == NaN)
+  console.log(parseInt('undefined' ))
+  console.log('1abc' == 1)
+  console.log('1' == false)
+  
+  
   console.log(typeof a === 'undefined') //true
   console.log(typeof a == 'undefined') //true
   
@@ -74,7 +82,7 @@
   //typeof null的返回值是'object' 是js底层设计的“缺陷”造成的。
   var f = null
   console.log(typeof f)
-  console.log(typeof f === 'null')*/
+  console.log(typeof f === 'null')
   
   /*var a1 = {name:'kobe',age:40}
   var a2 = function () {
@@ -101,6 +109,21 @@
   console.log(typeof b1.b2[2]('hello'));//2个输出：'hello' 'undefined'
   console.log(b1.b2[2]('hello'));//2个输出： 'hello' undefined
   console.log(b1.b3())//2个输出：'我是b3' , undefined
+  
+  //关于NaN --- not a number
+  //1.NaN是属于Number类型的一个值
+  console.log(typeof NaN)
+  //2.NaN不与任何值相等，包括自身
+  console.log(NaN == NaN)
+  //3.什么时候会出现NaN
+  var number1
+  console.log(parseInt('z123abc'))
+  console.log(1+undefined) //undefined参与数学运算，产生NaN
+  var result = 1+number1
+  //4.判断一个数据是否是NaN
+  console.log(isNaN(result))
+  
+  
 
 </script>
 </body>

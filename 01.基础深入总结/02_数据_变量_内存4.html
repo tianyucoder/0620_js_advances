@@ -6,13 +6,19 @@
 </head>
 <body>
 <!--
-问题: 在js【调用函数】传递变量时, 是值传递？还是内存地址的传递？
-      对于js函数传参，只有值传递, 没有引用传递！！！
+问题: 在js中【调用函数】传递变量时, 是值传递？还是内存地址的传递？
+      对于js函数传参，只有值传递, 没有地址传递！！！
       只是这个值可能是基本数据, 也可能是地址(引用)数据
 -->
 <script type="text/javascript">
   
-
+  function demo(x) {
+    console.log(x)
+  }
+  
+  var a = {m:1,n:2}
+  demo(a)
+  
 </script>
 </body>
 </html>
