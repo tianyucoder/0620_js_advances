@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>03_执行上下文栈</title>
+</head>
+<body>
+<!--
+代码整体运行“步骤”：
+    1. 在全局代码执行前, JS引擎就会创建一个栈结构来存储和管理所有的【执行上下文】
+    2. 在全局执行上下文(window所对应的)确定后, 将其添加到栈中(压栈)，此时栈底的是全局【执行上下文】
+    3. 在函数执行之前，创建函数的【执行上下文】, 随后再次压栈
+    4. 在当前函数执行完毕后,将该函数的【执行上下文】在栈中移除(出栈)
+    5. 当所有的代码执行完后, 栈中只剩下全局【执行上下文】
+    备注：执行上下文栈中，栈顶的永远是当前正在执行的函数的【执行上下文】
+-->
+<script type="text/javascript">
+  
+  //例子(对比图示观察)
+  var color1 = 'blue'
+  function changeColor () {
+    var color2 = 'red ';
+    function swapColors() {
+      var color3 = 'gray'
+    }
+    swapColors()
+  }
+  changeColor () ;
+ 
+</script>
+
+</body>
+</html>
