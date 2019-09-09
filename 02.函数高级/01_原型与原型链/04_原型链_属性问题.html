@@ -12,6 +12,25 @@
 -->
 <script type="text/javascript">
   
+  function Person(name,age) {
+    this.name = name
+    this.age = age
+  }
+  
+  Person.prototype.speak = function () {
+    console.log('我是'+this.name+'，我的年龄是'+this.age+'，我的性别是'+this.sex)
+  }
+  
+  
+  var p1 = new Person('kobe',18,'男')
+  var p2 = new Person('wade',18,'男')
+  console.log(p1)
+  console.log(p2)
+  p1.speak()
+  p2.speak()
+  console.log(p1.sex());//
+  console.log(p2.sex);//
+
 
 </script>
 </body>
