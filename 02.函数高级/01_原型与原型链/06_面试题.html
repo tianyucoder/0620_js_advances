@@ -9,21 +9,20 @@
 <script type="text/javascript">
   
   //面试题1
-  var A = function() {
+  /*var A = function() {
 
   }
   A.prototype.n = 1
-
+  var c = new A()
   var b = new A()
 
   A.prototype = {n: 2,m: 3}
-
-  var c = new A()
   
-  console.log(b.n, b.m, c.n, c.m)
+  
+  console.log(b.n, b.m, c.n, c.m)*/
   
   //面试题2
-  /*var F = function(){
+  var F = function(){
   
   };
   Object.prototype.a = function(){
@@ -34,10 +33,15 @@
   };
   
   var f = new F();
-  f.a()
-  f.b()
-  F.a()
-  F.b()*/
+  f.a()//
+  f.b()//
+  F.a()//
+  F.b()//
+  
+  /*console.log(Function.prototype === Function.__proto__)
+  console.log(Function.prototype)
+  console.log(Object.prototype)
+  console.log(Function.prototype.__proto__ === Object.prototype)*/
   
 </script>
 </body>
