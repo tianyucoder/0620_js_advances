@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>01_变量提升与函数提升</title>
+</head>
+<body>
+<!--
+1. 变量声明(定义)提升
+      * 通过var定义(声明)的变量, 在定义语句之前就可以访问到
+      * 值: undefined
+2. 函数声明(定义)提升
+      * 通过function定义(声明)的函数, 在定义语句之前就可以直接调用
+      * 值: 函数(函数体并未执行)
+      * 备注：只有通过函数声明式定义的函数，才存在函数提升
+3. 问题: 变量提升和函数提升是如何产生的?
+      * 预解析(全局代码开始执行前要预解析，函数体执行前要预解析)
+      * 预解析：“扫描” var  function
+-->
+<script type="text/javascript">
+
+  /*//变量提升
+  console.log(a) //undefined
+  var a = 1
+
+  //函数提升
+  demo()
+  function demo() {
+    alert(1)
+  }*/
+  
+  //函数的预解析
+  /*function demo() {
+    console.log(a,b,test)
+    var a = 1
+    var b = 2
+    function test() {
+      
+    }
+  }
+  demo()*/
+  
+  //案例1:当函数提升与变量提升冲突的时候，最终提升的是函数
+  /*console.log(a)//
+  function a() {
+    console.log(1)
+  }
+  var a = 1*/
+  
+  //案例2：只有通过函数声明式定义的函数，才存在函数提升
+  /*console.log(a)//
+  var a = 1
+  var a = function () {
+    
+  }*/
+  
+  console.log(a)
+  var a = 1
+  function demo() {
+    console.log(a)//undefined
+    var a = 2
+    console.log(a)//2
+  }
+  demo()
+  console.log(a)
+  
+
+</script>
+</body>
+</html>
