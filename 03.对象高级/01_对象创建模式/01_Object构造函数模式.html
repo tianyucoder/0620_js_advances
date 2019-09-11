@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>01_Object构造函数模式</title>
+</head>
+<body>
+<!--
+方式一: Object构造函数模式
+  * 套路: 先创建空Object对象, 再动态添加属性/方法
+  * 适用场景: 起始时不确定对象内部数据
+  * 问题: 语句太多（创建多个对象的时候）
+-->
+<script type="text/javascript">
+  
+  var person = new Object()
+  person.name = 'kobe'
+  person.age = 40
+  person.sex = '男'
+  person.speak = function () {
+    console.log('我是'+this.name+'，年龄是'+this.age+'，性别是'+this.sex)
+  }
+
+  var person2 = new Object()
+  person2.name = 'kobe'
+  person2.age = 40
+  person2.sex = '男'
+  person2.speak = function () {
+    console.log('我是'+this.name+'，年龄是'+this.age+'，性别是'+this.sex)
+  }
+
+</script>
+</body>
+</html>
