@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>$Title$</title>
+</head>
+<body>
+<button id="btn">点我停下来</button>
+<script type="text/javascript">
+  //让浏览器崩溃的一段代码
+  /*var obj = {}
+  for (var i = 0; i <1000000; i++) {
+    obj[i] = new Array(1000000)
+  }*/
+  
+  /* function fn() {
+     // 意外的全局变量
+     a = new Array(10000)
+     console.log(a)
+     a.push(1)
+   }
+   fn()*/
+  
+  // 没有及时清理的计时器或回调函数
+  var intervalId = setInterval(function () {
+    console.log('-----')
+  }, 200)
+
+  console.log('intervalId', intervalId)
+  // 后面执行
+  var btn = document.getElementById('btn')
+  btn.onclick = function () {
+    clearTimeout(intervalId)
+  }
+  
+  //一些特殊的事情
+  console.log(name) //window上有name
+  function demo() {
+  
+  }
+  demo.name = 'kobe'//函数的name不能修改
+  console.log(demo.name)
+  Date.prototype = 1 //内置函数的原型不允许“废掉”
+  var d = new Date()
+  console.log(d.getFullYear());
+  console.log(undefined in window)//true
+
+</script>
+</body>
+</html>
