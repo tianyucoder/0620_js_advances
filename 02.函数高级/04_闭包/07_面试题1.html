@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>07_面试题1</title>
+</head>
+<body>
+
+<script type="text/javascript">
+   /*
+    说说它们的输出情况
+   */
+
+  //题目一
+  /*var name = "The Window";
+  var obj = {
+    name: "My Object",
+    getName: function () {
+      return function () {
+        return this.name;
+      }
+    }
+  };
+  console.log(obj.getName()());*/
+  
+  //题目二
+  var name = "The Window";
+  var obj2 = {
+    name: "My Object",
+    getName: function () {
+      var that = this;
+      return function () {
+        return that.name;
+      };
+    }
+  };
+  console.log(obj2.getName()());
+</script>
+</body>
+</html>
