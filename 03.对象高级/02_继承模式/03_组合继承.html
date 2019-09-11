@@ -12,34 +12,6 @@
 -->
 <script type="text/javascript">
 
-  function Person(name,age) {
-    this.name = name
-    this.age = age
-  }
-  
-  Person.prototype.setName = function (name) {
-    this.name = name
-  }
-
-  
-  function Student(name,age,price) {
-    Person.call(this,name,age)
-    this.price = price
-  }
-  
-  Student.prototype = new Person()
-  Student.prototype.constructor = Student
-  
-  Student.prototype.setPrice = function (price) {
-    this.price = price
-  }
-  
-  var s = new Student('kobe',18,1000000)
-  console.log(s)
-  s.setName('wade')
-  s.setPrice(5000)
-  console.log(s)
-
 </script>
 </body>
 </html>

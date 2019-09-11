@@ -16,31 +16,6 @@
   备注：利用了call或者apply让你少些了代码，并不是真正意义上的继承
 -->
 <script type="text/javascript">
-  
-  function Person(name,age) {
-    this.name = name
-    this.age = age
-    this.setName = function (name) {
-      this.name = name
-    }
-  }
-  
-  function Student(name,age,price) {
-    /*this.name = name
-    this.age = age
-    this.setName = function (name) {
-      this.name = name
-    }*/
-    Person.call(this,name,age)
-
-    this.price = price
-    this.setPrice = function (price) {
-      this.price = price
-    }
-  }
-  
-  var s = new Student('tom',18,16000)
-  console.log(s)
 
 
 </script>

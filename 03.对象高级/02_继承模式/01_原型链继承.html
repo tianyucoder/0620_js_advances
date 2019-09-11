@@ -19,36 +19,6 @@
             备注：目的是为了让子类型的实例能够沿着__proto__找到父类型原型上的方法）
 -->
 <script type="text/javascript">
-  
-  function Parent() {
-    this.name = '建林'
-  }
-  
-  Parent.prototype.makeMoney = function () {
-    console.log('我是'+this.name+',赚了它一个亿！')
-  }
-  
-  function Child() {
-    this.name = '思聪'
-  }
-  
-  Child.prototype = new Parent()
-  Child.prototype.constructor = Child
-  
-  Child.prototype.spendMoney = function () {
-    console.log('我是'+this.name+',不好意思刚花了一个亿！')
-  }
-  
-  var p = new Parent()
-  var c = new Child()
-  p.makeMoney()
-  c.makeMoney()
-  c.spendMoney()
-  
-  Number.prototype.x = 300
-  var a = 200
-  console.log(a.x)
-  console.log(new Number(200))
 
 </script>
 </body>
