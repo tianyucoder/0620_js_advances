@@ -6,11 +6,17 @@
 </head>
 <body>
 <script type="text/javascript">
+  
+  /*
+  * 关于js中的函数嵌套：
+  *     1.嵌套着定义：内层函数按照作用域链查找变量时，经过外层函数
+  *     2.嵌套着调用：内层函数按照作用域链查找变量时，不经过外层函数
+  * */
  
   //问题1: 结果输出多少?
   /*var x = 10;
   function fn1() {
-    console.log(x);
+    console.log(x);//10
   }
   function fn2() {
     var x = 20;
@@ -23,19 +29,27 @@
    function fn1() {
      var x = 20;
      function fn2() {
-       console.log(x);
+       console.log(x);//20
      }
      fn2();
    }
    fn1();*/
   
   //问题2：输出多少
-  /*var obj2 = {
+  var obj2 = {
     fn2: function () {
-      console.log(fn2)
+      console.log(fn2)//function undefined 报错
     }
   }
-  obj2.fn2()*/
+  obj2.fn2()
+  console.log(obj2.fn2)
+  
+  /*var a = {m:1,n:2,p:{j:1,k:2}}
+  var b = {m:1,n:2,p:{j:100,k:2}}
+  function demo() {
+    console.log(k)
+  }
+  demo()*/
   
 </script>
 </body>
