@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>01_作用域</title>
+</head>
+<body>
+<!--
+1. 理解
+  * 作用域是用来规定变量可访问范围的一套规则
+  * 就是一块"地盘", 一个代码段所在的区域
+  * 它是静态的(相对于上下文对象), 在编写代码时就确定了
+2. 分类
+  * 全局作用域
+  * 函数作用域
+  * ES6提出了一个新的作用域：块级作用域（后面专门讲）
+3. 作用
+  * 隔离变量，不同作用域下的同名变量不会有冲突
+-->
+<script type="text/javascript">
+  
+  //1.作用域是函数调用时产生的
+  //2.作用域是定义完函数(写完代码)就产生了-----对
+  
+  var c = 1
+  function demo() {
+    var a = 1
+    var b = 2
+  }
+  demo()
+  console.log(a)
+  
+  
+
+
+</script>
+</body>
+</html>
