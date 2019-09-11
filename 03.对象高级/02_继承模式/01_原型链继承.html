@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>01_原型链继承</title>
+</head>
+<body>
+<!--
+方式1: 原型链继承
+  1. 套路：
+        1. 定义父类型构造函数
+        2. 给父类型的原型对象添加方法
+        3. 定义子类型的构造函数
+        4. 让子类型构造函数的显式原型指向父类型的实例
+        5. 将子类型原型的constructor属性指向子类型
+        6. 给子类型原型添加方法
+        7. 创建子类型的对象: 可以调用父类型的方法
+  2. 关键点：让子类型构造函数的显式原型指向父类型的实例
+            备注：目的是为了让子类型的实例能够沿着__proto__找到父类型原型上的方法）
+-->
+<script type="text/javascript">
+  
+  function Parent() {
+    this.name = '建林'
+  }
+  
+  Parent.prototype.makeMoney = function () {
+    console.log('我是'+this.name+',赚了它一个亿！')
+  }
+  
+  function Child() {
+    this.name = '思聪'
+  }
+  
+  Child.prototype = new Parent()
+  Child.prototype.constructor = Child
+  
+  Child.prototype.spendMoney = function () {
+    console.log('我是'+this.name+',不好意思刚花了一个亿！')
+  }
+  
+  var p = new Parent()
+  var c = new Child()
+  p.makeMoney()
+  c.makeMoney()
+  c.spendMoney()
+  
+  Number.prototype.x = 300
+  var a = 200
+  console.log(a.x)
+  console.log(new Number(200))
+
+</script>
+</body>
+</html>
