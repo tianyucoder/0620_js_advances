@@ -17,16 +17,25 @@
   
 3. 闭包产生的三个必要条件?
     * 1.函数嵌套
-    * 2.内部函数引用了外部函数数的数据(变量)
+    * 2.内部函数引用了外部函数的数据(变量)
     * 3.执行外部函
+    * 4.return内部函数
 -->
 <script type="text/javascript">
   
+  /*
+  * 观察发现：
+  *   1.fn1调用完毕，原本应该“死去”的a，“活”下来了。
+  *   2.虽然“活下”来了，但是并不那么“潇洒”
+  * */
+  
   function fn1() {
     var a = 1
+    var b = 2
     function fn2() {
       a++
       console.log(a)//2
+      console.log(b)
     }
     fn2()
     return fn2
@@ -35,9 +44,8 @@
   var f = fn1()
   f()
   f()
-  f()
-  f()
-  f()
+  
+  
  
 
 </script>

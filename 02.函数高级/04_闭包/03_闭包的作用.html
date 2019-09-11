@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>03_闭包的作用</title>
+
+</head>
+<body>
+<!--
+1. 使函数内部的变量在函数执行完后, 仍然存活在内存中(延长了局部变量的生命周期)
+2. 让函数外部可以间接操作(读/写)到函数内部的数据
+
+问题:
+  1. 函数执行完后, 函数内部声明的局部变量是否还存在? 不存在
+  2. 在函数外部能直接访问函数内部的局部变量吗? 不能
+-->1
+<script type="text/javascript">
+  
+  function demo() {
+    var a = 1
+    function demo1() {
+      a++
+    }
+    return demo1
+  }
+  
+  var d = demo()
+  d()
+  
+
+</script>
+
+</body>
+</html>
