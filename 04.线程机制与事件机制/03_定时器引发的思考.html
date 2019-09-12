@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>03_定时器引发的思考</title>
+</head>
+<body>
+
+<button id="btn">启动定时器</button>
+
+<!--
+1. 定时器真的准时吗?
+  * 定时器并不能保证真正定时执行
+  * 一般会误差会有“一丢丢”(算是正常), 但是也有可能延迟很长时间(不正常)
+  
+2. 定时器回调函数是谁执行的？
+  * 在主线程执行的, 因为js是单线程的！没有其他进程了。
+  
+3. 定时器是如何实现的?
+  * 事件循环模型(后面讲)
+-->
+<script type="text/javascript">
+  
+  /*var btn = document.getElementById('btn')
+  btn.onclick = function () {
+    var time1 = Date.now()//获取当前时间，时间戳
+    
+    setTimeout(function () {
+      console.log(Date.now() - time1)//差值理上一定是2000
+    },100)
+
+    //开销比较大的代码
+    var arr = []
+    for (var i=0; i<10000; i++ ){
+      var arr2 = new Array(10000)
+      arr.push(arr2)
+    }
+  }*/
+
+  var time1 = Date.now()
+  setTimeout(function () {
+    console.log(Date.now() - time1)//差值理上一定是2000
+  },2000)
+
+  //开销比较大的代码
+  var arr = []
+  for (var i=0; i<10000; i++ ){
+    var arr2 = new Array(10000)
+    arr.push(arr2)
+  }
+  
+  
+
+ 
+  
+  
+
+</script>
+</body>
+</html>
