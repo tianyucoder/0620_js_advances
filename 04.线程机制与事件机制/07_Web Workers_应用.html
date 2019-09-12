@@ -13,7 +13,8 @@
 <body>
 
 <input type="text" id="number" value="30">
-<button id="btn1">计算fibonacci值</button>
+<button id="btn1">主线程计算fibonacci值</button>
+<button id="btn2">分线程计算fibonacci值</button>
 <button id="btn3">大按钮</button>
 
 <!--
@@ -24,6 +25,7 @@
 -->
 <script type="text/javascript">
   
+  //主线程计算
   var btn1 = document.getElementById('btn1')
   btn1.onclick = function () {
     var value = document.getElementById('number').value
@@ -34,6 +36,20 @@
   //计算斐波那契数列中的第n项的值
   function fibonacci(n) {
     return n<3 ? 1 : fibonacci(n-2) + fibonacci(n-1)
+  }
+  
+  //分线程计算
+  var btn2 = document.getElementById('btn2')
+  btn2.onclick = function () {
+    var value = document.getElementById('number').value
+    //1.找来一个帮你干活的人-----------实例化一个worker
+    var worker = new Worker('worker1.js')
+    //2.告诉帮你干活的人一些数据--------主线程要给分线程传递数据
+    worker.postMessage(value)
+    //3.得到运算完的结果
+    worker.onmessage = function (messageEvent) {
+      alert(messageEvent.data)
+    }
   }
 
 </script>
