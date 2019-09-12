@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>07_Web Workers_应用</title>
+  <style>
+    #btn3{
+      width: 300px;
+      height: 300px;
+    }
+  </style>
+</head>
+<body>
+
+<input type="text" id="number" value="30">
+<button id="btn1">计算fibonacci值</button>
+<button id="btn3">大按钮</button>
+
+<!--
+  斐波那契额数列：1、1、2、3、5、8、13、21、34、……
+  计算得到fibonacci数列中第n个数的值
+  在主线程计算: 当位数较大时, 会阻塞主线程, 导致界面卡死
+  在分线程计算: 不会阻塞主线程
+-->
+<script type="text/javascript">
+  
+  var btn1 = document.getElementById('btn1')
+  btn1.onclick = function () {
+    var value = document.getElementById('number').value
+    var result = fibonacci(value)
+    alert(result)
+  }
+  
+  //计算斐波那契数列中的第n项的值
+  function fibonacci(n) {
+    return n<3 ? 1 : fibonacci(n-2) + fibonacci(n-1)
+  }
+
+</script>
+</body>
+
+</html>
